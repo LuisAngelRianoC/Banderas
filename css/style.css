@@ -1,9 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap");
+/* dia */
+:root {
+  --container: #fff;
+  --header-color: #0008b4;
+  --scroll-color: #0078b4;
+}
+
 html {
-  font-size: 62.5%;
+  scroll-padding-top: 70px;
+  scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar-track {
+  background: #333;
+}
+
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 5px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "BIZ UDPMincho", serif;
+  max-height: 1000vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  background: rgb(72, 34, 177);
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  min-height: 99vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #000;
+}
+
+.card {
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 7px;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Frond card */
+
+.inner-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  top: 35px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front-card .flag {
+  width: 200px;
+  height: 100px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.front-card,
+.back-card {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.back-card {
+  transform: rotateY(180deg);
+}
+
+.back-card p {
+  padding: 0 20px;
+  text-align: justify;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.back-card a {
+  font-size: 15px;
+  color: #fff;
+}
+
+.card:hover .inner-card {
+  transform: rotateY(-180deg);
+}
+
+/* Vertical */
+/* MexicanFLag */
+.mex .left-block {
+  background-color: #006847;
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.mex .center-block {
+  background-color: white;
+  height: 100%;
+  width: 33.33%;
+  float: left;
+}
+
+.mex .right-block {
+  background-color: #ce1125;
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.mex .center-block img {
+  position: relative;
+  top: 25px;
+  width: 100%;
+  height: 50px;
+}
+
+/* France Flag */
+.fran .left-block {
+  background-color: #0055a4;
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.fran .center-block {
+  background-color: white;
+  height: 100%;
+  width: 33.33%;
+  float: left;
+}
+.fran .right-block {
+  background-color: #ef4135;
+  height: 100%;
+  width: 33.33%;
+  float: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Canadian Flag */
+.can .left-block {
+  background-color: red;
+  height: 100%;
+  width: 30%;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.can .center-block {
+  background-color: white;
+  height: 100%;
+  width: 40%;
+  float: left;
+}
+.can .right-block {
+  background-color: red;
+  height: 100%;
+  width: 30%;
+  float: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.can .center-block img {
+  position: relative;
+  top: 25px;
+  height: 50px;
+}
+
+/* Horizontal */
+/* Spain Flag */
+
+.spa .left-block {
+  background-color: #ad1519;
+  height: 30%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.spa .center-block {
+  background-color: #fabd00;
+  height: 40%;
+}
+.spa .right-block {
+  background-color: #ad1519;
+  height: 30%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.spa .center-block img {
+  height: 35px;
+  position: relative;
+  padding-right: 100px;
+}
+
+.ale .left-block {
+  background-color: #000;
+  height: 33.33%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.ale .center-block {
+  background-color: #ff0000;
+  height: 33.33%;
+}
+.ale .right-block {
+  background-color: #ffcc00;
+  height: 33.33%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.rus .left-block {
+  background-color: #fff;
+  height: 33.33%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.rus .center-block {
+  background-color: #0039a6;
+  height: 33.33%;
+}
+.rus .right-block {
+  background-color: #d52b1e;
+  height: 33.33%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
